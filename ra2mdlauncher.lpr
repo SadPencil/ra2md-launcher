@@ -96,7 +96,7 @@ begin
 
   appPath := ExtractFileDir(ParamStr(0));
   gameMdPath := appPath + '\gamemd.exe';
-  ra2MdPath := appPath + '\ra2md.exe';
+  ra2MdPath := appPath + '\Ra2md.exe';
 
   if not FileExists(gameMdPath) then
   begin
@@ -123,7 +123,7 @@ begin
   end
   else
   begin
-    Writeln('Launching ra2md.exe');
+    Writeln('Launching Ra2md.exe');
     gameProcess.Executable := ra2MdPath;
   end;
   for i := 1 to ParamCount() do
