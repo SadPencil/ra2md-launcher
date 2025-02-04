@@ -30,7 +30,9 @@ uses
 
   function Get_IsSteam(const gameMdPath: string): boolean;
   const
-    steamGameMdSha1Hash = 'f5ae9d38f1f628f8bc0c27b1be463c3f5c5d811b';
+    steamGameMdSha1HashV1 = '1b57b09d9912023eda3124b959d5f274e9a9bd5f';
+  const
+    steamGameMdSha1HashV2 = 'f5ae9d38f1f628f8bc0c27b1be463c3f5c5d811b';
   const
     cncfdGameMdSha1Hash = '6fdf606f9b08ee4c5813aed373953fa1c822e934';
   const
@@ -50,7 +52,11 @@ uses
     WriteLn('Size (bytes) of gamemd.exe: ', GetFileSize(gameMdPath));
 
     // Determine by hash
-    if gameMdHash = steamGameMdSha1Hash then
+    if gameMdHash = steamGameMdSha1HashV1 then
+    begin
+      Exit(True);
+    end
+    else if gameMdHash = steamGameMdSha1HashV2 then
     begin
       Exit(True);
     end
