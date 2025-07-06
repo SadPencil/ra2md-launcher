@@ -49,7 +49,7 @@ uses
     gameMdHash := CalculateFileSHA1(gameMdPath);
     gameMdSizeInByte := GetFileSize(gameMdPath);
     WriteLn('SHA-1 hash of gamemd.exe: ', gameMdHash);
-    WriteLn('Size (bytes) of gamemd.exe: ', GetFileSize(gameMdPath));
+    WriteLn('Size (bytes) of gamemd.exe: ', gameMdSizeInByte);
 
     // Determine by hash
     if gameMdHash = steamGameMdSha1HashV1 then
